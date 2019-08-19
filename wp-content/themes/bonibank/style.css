@@ -1,0 +1,915 @@
+/*
+Theme Name: BoniBank
+Theme URI: 
+Author: 
+Author URI: 
+Description: Twenty Seventeen brings your site to life with immersive featured images and subtle animations. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentyseventeen
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* basic s */
+/*
+ * cwTeXYen (Chinese Traditional) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: "cwTeXYen";
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.eot?#iefix)
+      format("embedded-opentype"),
+    url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.woff2)
+      format("woff2"),
+    url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.woff) format("woff"),
+    url(//fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.ttf)
+      format("truetype");
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: cwTeXYen, Noto Sans TC, sans-serif, Arial, Helvetica, sans-serif;
+  /* background-color: rgba(250, 250, 250, 1); */
+  word-break: break-word;
+  color: rgba(0, 0, 0, 1);
+  overflow-x: hidden;
+  font-size: 1.3rem;
+}
+
+header {
+  line-height: 80px;
+}
+
+p {
+  font-weight: 400;
+  color: #1b1e21;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+section {
+  margin: 20px 0;
+}
+/* basic e */
+/* bootstrap s */
+.container-fluid {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* bootstrap e */
+/* logo s */
+.screen-mode .logo img {
+  max-height: 80px;
+}
+/* logo e */
+/* nav start */
+.nav-tabs {
+  border-bottom: 0px;
+  line-height: 80px;
+}
+
+.nav-link {
+  display: block;
+  padding: unset;
+  letter-spacing: 5px;
+  transition: all 0.3s ease-in;
+}
+
+.nav-tabs .nav-item.show .nav-link {
+  color: #495057;
+  background-color: #fff;
+  border-color: transparent;
+  font-weight: bold !important;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0rem;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+.nav-tabs .nav-link a:hover,
+.nav-tabs .nav-link.active {
+  border-color: transparent;
+  color: #00b9eb;
+  background: transparent;
+  font-weight: bold;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+  border-color: transparent;
+  color: #00b9eb;
+}
+/* nav e */
+/* icon-box s */
+.icon-box {
+  padding: 5px 15px;
+  text-align: right;
+}
+
+.icon-box img {
+  border-radius: 50%;
+}
+/* icon-box e */
+/* tab-content s */
+.tab-content img {
+  width: 100vw;
+}
+/* tab-content e */
+/* product s */
+.product-img img {
+  border-radius: 50%;
+  max-width: 300px;
+}
+
+.product-content {
+  padding: 20px;
+}
+
+.product-content p {
+  color: #002f56;
+}
+/* product e */
+/* content- s */
+.content-header {
+  margin-bottom: 30px;
+}
+
+.content-header p {
+  font-size: 35px;
+  font-weight: 600;
+  color: #4092d8;
+  padding-bottom: 10px;
+  display: initial;
+}
+
+.content-header hr {
+  width: 200px;
+  margin-top: 0px;
+  border-top: 3px solid #4092d8;
+}
+.contact-text {
+  padding: 10px;
+}
+/* content- e */
+/* nav-cal s */
+.nav-cal.nav-tabs {
+  /* border-bottom: 2px solid #4092d8; */
+  line-height: 40px;
+}
+
+.nav-cal.nav-tabs .nav-link {
+  font-weight: 300;
+  background: #e9ecef;
+}
+
+.nav-cal.nav-tabs .nav-link:first-child {
+  border-top-left-radius: 15px;
+}
+.nav-cal.nav-tabs .nav-link:last-child {
+  border-top-right-radius: 15px;
+}
+
+
+.nav-cal.nav-tabs .nav-link.active {
+  background: #fff;
+  border: 1px solid;
+  border-color: #00b9eb;
+}
+
+/* nav-cal e */
+
+/* dai_form start */
+.dai_form {
+  overflow: auto;
+  border: 1px solid lightgray;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.dai_form i {
+  width: 30px;
+  text-align: center;
+  padding: 0 3px;
+}
+
+@media screen and (min-width: 992px) {
+  .dai_form {
+    padding: 5px 50px;
+  }
+}
+
+.dai_form_header {
+  background: #e11d00;
+  color: #fff;
+  font-size: 24px;
+  /* line-height: 65px; */
+  padding: 20px 0;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+/* dai_form end */
+/* wpcf7 start */
+#responsive-form {
+  /* max-width:600px -- change this to get your desired form width --; */
+  margin: 0 auto;
+  width: 100%;
+}
+.form-row {
+  width: 100%;
+}
+.column-half,
+.column-full {
+  float: left;
+  position: relative;
+  padding: 0.65rem;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**---------------- Media query ----------------**/
+@media only screen and (min-width: 48em) {
+  .column-half {
+    width: 50%;
+  }
+}
+
+.wpcf7 .form-row {
+  width: 100%;
+  display: unset;
+  -ms-flex-wrap: unset;
+  flex-wrap: unset;
+  margin-right: unset;
+  margin-left: unset;
+}
+
+.wpcf7 label i {
+  font-size: 18px;
+}
+
+.wpcf7 label.text {
+  color: gray;
+  font-size: 18px;
+  padding-left: 10px;
+  word-spacing: 7px;
+  margin-bottom: 0px;
+}
+
+.wpcf7 label.main-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 18px;
+  /* font-weight: 100; */
+  color: #4092d8;
+  margin: 10px 0 20px 0;
+  text-transform: capitalize;
+}
+
+.wpcf7 label.icon {
+  /* font-size: 17px; */
+  color: gray;
+  position: absolute;
+  top: 9px;
+  left: 25px;
+  margin: 10px 0 20px 0;
+  text-align: center;
+}
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="tel"],
+.wpcf7 textarea {
+  width: 100%;
+  padding: 0px;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 25px !important;
+  border-radius: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: transparent;
+  padding-left: 20px;
+  transition: all 0.1s ease-in;
+  margin-bottom: 0px;
+  font-size: 18px;
+}
+
+.wpcf7 input[type="text"]:focus,
+.wpcf7 input[type="email"]:focus,
+.wpcf7 input[type="tel"]:focus,
+.wpcf7 textarea:focus {
+  outline: none;
+  border: 1px solid #4092d8;
+  /* border-right: 1px solid #4092d8; */
+}
+
+/* .wpcf7-form-control-wrap:last-child {
+  padding-left: 20px;
+} */
+
+.wpcf7-select {
+  padding-left: 20px;
+  font-size: 18px;
+  color: gray;
+  border: 1px solid #ccc;
+  width: 100%;
+  -webkit-appearance: none;
+  border-radius: 15px;
+}
+
+[class*="menu"] {
+  padding-left: 0px;
+}
+
+select {
+  /* -webkit-appearance: none; */
+  background: #fff;
+}
+
+.wpcf7-select:focus {
+  outline: none;
+}
+
+.wpcf7 input.wpcf7-free-text {
+  display: none;
+}
+
+.wpcf7-list-item-label {
+  /* color: gray; */
+}
+
+.wpcf7-submit {
+  width: 200px;
+  background: #fb9000;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  padding: 0px;
+  cursor: pointer;
+}
+.wpcf7-submit:hover {
+  /* background: #c5bebe; */
+}
+span.wpcf7-not-valid-tip {
+  text-shadow: none;
+  font-size: 16px;
+  color: #fff;
+  background: #ff0000;
+  padding: 5px;
+  text-align: center;
+}
+div.wpcf7-validation-errors {
+  text-shadow: none;
+  border: transparent;
+  background: #f9cd00;
+  padding: 5px;
+  color: #9c6533;
+  text-align: center;
+  margin: 0;
+  font-size: 16px;
+}
+div.wpcf7-mail-sent-ok {
+  text-align: center;
+  text-shadow: none;
+  padding: 5px;
+  font-size: 16px;
+  background: #59a80f;
+  border-color: #59a80f;
+  color: #fff;
+  margin: 0;
+  word-break: keep-all;
+}
+/* wpcf7 end */
+
+/* footer start */
+footer {
+  background: rgba(250, 250, 250, 1);
+}
+
+.footer_note {
+  background: rgba(250, 250, 250, 1);
+  color: #666;
+  padding: 10px 20px;
+  font-size: 12px;
+  /* letter-spacing: 2px; */
+  font-weight: 300;
+  box-shadow: 0px -1px 2px -1px #ccc;
+}
+
+.footer_title {
+  padding: 0 10px;
+  font-size: 60px;
+  font-weight: 600;
+  text-shadow: 2px 2px #ccc;
+  letter-spacing: 4px;
+  color: #e11d00;
+}
+
+.footer_img img {
+  padding: 10px;
+  width: 400px;
+}
+
+.footer_title span {
+  font-size: 16px;
+  text-shadow: none;
+  color: #666;
+}
+
+@media screen and (max-width: 575px) {
+  .footer_title {
+    font-size: 50px;
+  }
+  .footer_title span {
+    display: block;
+    padding-inline-start: inherit;
+  }
+}
+
+.footer_right {
+  float: right;
+}
+
+.footer_slogan {
+  padding: 10px 20px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.footer_copyright {
+  padding: 10px 20px;
+  /* float: right; */
+  display: inline-block;
+  font-size: 10px;
+}
+
+.bgr {
+  background: #e11d00;
+  color: #fff;
+}
+/* footer end */
+
+.flow_img {
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.flow_img img {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+.post_content_main.about {
+  margin: 20px 0 40px 0;
+  line-height: 30px;
+}
+
+.personal_report {
+  color: grey;
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+
+.personal_report a {
+  color: #ca0002;
+}
+
+/* dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 1px 5px 0px #d6d6d6;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #fff;
+  border-bottom: 3px solid #ff0000;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+/* posts */
+
+.posts_description {
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  background: #ff000082;
+}
+
+.posts_title {
+  /* text-align: center; */
+  line-height: 30px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.posts {
+  transition: all 0.5s;
+  position: relative;
+  margin: 20px 0;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px #ccc;
+}
+
+.posts_img {
+  overflow: hidden;
+}
+
+.posts:hover img {
+  transition: ease-in-out 0.5s;
+  transform: scale(1.1);
+}
+
+.posts:hover .posts_description {
+  transition: ease-in-out 0.5s;
+  background: #ff0000;
+}
+
+.posts:hover .posts_title {
+  transition: ease-in-out 0.5s;
+  /* color: #dc3545; */
+}
+
+.about_text {
+  padding-top: 10%;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 991px) {
+  .about_img {
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .about_text {
+    padding-top: 10px;
+  }
+}
+
+.post_content_head {
+  margin-bottom: 20px;
+}
+
+.post_share_title {
+  font-weight: 600;
+  font-size: 20px;
+  display: inline-block;
+  padding-right: 10px;
+  color: gray;
+  padding: 10px 0;
+}
+
+.post_content_title {
+  display: inline-block;
+  font-size: 28px;
+  vertical-align: sub;
+  font-weight: 600;
+  color: red;
+  padding: 10px 0;
+  line-height: 36px;
+  word-break: keep-all;
+}
+
+.post_content_info {
+  padding: 10px 0;
+}
+
+.post_share_list {
+  margin-bottom: 15px;
+}
+
+.post_share_list img {
+  /* max-width: 120px; */
+}
+
+.post_share_item {
+  font-size: 18px;
+  color: gray;
+  padding: 10px 0;
+  margin-top: 5%;
+}
+
+.post_share_list:hover .post_share_item {
+  transition: ease-in-out 0.5s;
+  color: red;
+}
+
+.post_page_title {
+  border-bottom: 3px solid red;
+  font-size: 28px;
+  font-weight: 600;
+  color: #555d66;
+  padding: 10px 0;
+  /* display: inline-block; */
+  /* text-align: center; */
+  width: 115px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 576px) {
+  .post_share_item {
+    margin-top: 0;
+  }
+}
+
+/* overlay start */
+.overlay {
+  height: 80%;
+  /* min-height: 30%; */
+  width: 50%;
+  position: fixed; /* Stay in place */
+  z-index: 15; /* Sit on top */
+  right: -100%;
+  top: 20%;
+  /* opacity: 0; */
+  /* box-shadow: 0px 1px 3px 0px #d6d6d6; */
+  background-color: transparent;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 0; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  /* margin-top: 30px; */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  /* color: #fff; */
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+  /* color: rgba(205, 205, 70, 1); */
+  /* color: transparent; */
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  font-size: 40px;
+}
+
+.overlay-search {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.overlay .tabExtend {
+  display: block !important;
+  background: #fff;
+  border-bottom: 1px solid #ca1a24;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+/* overlay end */
+
+/* QA collapse start */
+.qa_contain {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.qa_school {
+  padding: 0 3px;
+  margin-bottom: 10px;
+}
+
+.qa_home_img {
+  padding: 0 3px 3px 3px;
+  background: #f0b166;
+}
+
+.qa_title {
+  font-size: 30px;
+  letter-spacing: 8px;
+  font-weight: 600;
+  padding: 10px 0;
+  border-radius: 0px;
+  margin-bottom: 20px;
+}
+
+.qa_title.car {
+  background: #b871b2;
+  color: #fff;
+}
+
+.qa_title.credit {
+  background: #e76f70;
+  color: #fff;
+}
+
+.qa_title.house {
+  background: #fa87b4;
+  color: #fff;
+}
+
+.qa_title.loan {
+  background: #727fb7;
+  color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+  .qa_contain {
+    padding: 0 3px;
+  }
+
+  .qa_home_img {
+    padding: unset;
+    background: transparent;
+  }
+}
+
+.myaccordion {
+  /* box-shadow: 0 0 1px rgba(0, 0, 0, 0.1); */
+}
+
+.myaccordion .card-header {
+  padding: 20px 10px;
+  border-radius: 0px;
+}
+
+.myaccordion ol {
+  margin: 10px 0;
+}
+
+.myaccordion .card {
+  border: none;
+  border-bottom: 1px dashed #cdcdcd;
+  border-radius: none;
+}
+
+.myaccordion .card-header {
+  border-bottom-color: #edeff0;
+  background: transparent;
+}
+
+.myaccordion .fa-stack {
+  font-size: 18px;
+}
+
+.myaccordion .fa-font {
+  /* font-weight: 300; */
+  line-height: 30px;
+}
+
+.myaccordion .btn {
+  font-size: 25px;
+  width: 100%;
+  font-weight: 300;
+  color: inherit;
+  padding: 0;
+  white-space: inherit;
+  text-align: left;
+}
+
+.myaccordion .btn span {
+  /* padding-left: 60px; */
+}
+
+.myaccordion .btn-link:hover,
+.myaccordion .btn-link:focus {
+  text-decoration: none;
+}
+
+.myaccordion li + li {
+  margin-top: 10px;
+}
+
+/* color custom */
+.myaccordion.credit .card-header {
+  border-bottom-color: #fff;
+  background: transparent;
+}
+
+.myaccordion.credit .card-body {
+  padding: 5px 13px;
+}
+
+.myaccordion.credit .card-body .card-answer {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.myaccordion.credit .card-body p {
+  margin-top: -35px;
+  padding: 0 25px;
+}
+
+.myaccordion.credit .btn span {
+  color: #fb9000;
+}
+
+/* QA collaspe end */
+
+.qa_more {
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  border: 3px solid #fb9000;
+  background: transparent;
+  color: #fff;
+}
+
+.posts .qa_more {
+  right: 10px;
+  padding: 3px;
+}
+
+@media screen and (max-width: 991px) {
+  .qa_contain .qa_more {
+    top: 24.5%;
+  }
+}
