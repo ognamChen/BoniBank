@@ -286,61 +286,56 @@ $(".JQ_QA_btn").on("click", function () {
 });
 
 // calculation 
+function calculate_1() {
+    var money = $("#cal_10").val(),
+        yRate = $("#cal_11").val(),
+        year = $("#cal_12").val();
+    bufYear = 0;
+    loan_1(money, yRate, year, bufYear);
+}
 
-$(".JQ_cal_form .JQ_cal_submit").on("click", function () {
-    var money = $("#cal_0").val(),
-        yRate = $("#cal_1").val(),
-        year = $("#cal_2").val(),
-        bufYear = $("#cal_3").val();
-    if (bufYear == "") {
-        bufYear = 0;
-    }
-    loan(money, yRate, year, bufYear);
+function calculate_2() {
+    var money = $("#cal_20").val(),
+        yRate = $("#cal_21").val(),
+        year = $("#cal_22").val(),
+        bufYear = $("#cal_23").val();
+    loan_2(money, yRate, year, bufYear);
+}
 
-});
-
-function loan(money, yRate, year, bufYear) {
+function loan_1(money, yRate, year, bufYear) {
     money = money * 10000;
-    if (bufYear == 0) {
-        var money, yRate, year,
-            rate = yRate / 12,
-            buf_time = year * 12,
-            rate_100 = rate / 100,
-            buf_temp = 1;
+    var money, yRate, year,
+        rate = yRate / 12,
+        buf_time = year * 12,
+        rate_100 = rate / 100,
+        buf_temp = 1;
 
-        for (i = 0; i <= buf_time - 1; i++) {
-            buf_temp = buf_temp * (1 + rate_100)
-        }
-
-        buf_rate = (rate_100 * buf_temp) / (buf_temp - 1);
-        calculate_result = '$' + Math.round(money * buf_rate);
-        // $(".JQ_cal_result").show();
-        $(".JQ_cal_grace").html("");
-        $(".JQ_cal_no_grace").html("每月需攤還本息 " + calculate_result + "元");
-    } else {
-        // if (bufYear > year) {
-        //     // $(".JQ_cal_result").show();
-        //     $(".JQ_cal_grace").html("");
-        //     $(".JQ_cal_no_grace").html("請輸入正確資訊");
-        //     return;
-        // }
-        var rate, buf_temp, buf_time,
-            rate = (yRate / 12),
-            calculate_result_1 = '$' + Math.round(money * rate / 100),
-            buf_time = year * 12 - bufYear * 12,
-            rate_100 = rate / 100,
-            buf_temp = 1;
-
-        for (i = 0; i <= buf_time - 1; i++) {
-            buf_temp = buf_temp * (1 + rate_100)
-        }
-
-        buf_rate = (rate_100 * buf_temp) / (buf_temp - 1)
-        calculate_result_2 = '$' + Math.round(money * buf_rate);
-
-        // $(".JQ_cal_result").show();
-        $(".JQ_cal_no_grace").html("");
-        $(".JQ_cal_grace").html("寬限期間內需月繳利息 " + calculate_result_1 + "元<br>" + "寬限期間後需月繳本息 " + calculate_result_2 + "元");
+    for (i = 0; i <= buf_time - 1; i++) {
+        buf_temp = buf_temp * (1 + rate_100)
     }
-    $("html, body").delay(500).animate({ scrollTop: $(".JQ_cal_submit").offset().top -200 });
+
+    buf_rate = (rate_100 * buf_temp) / (buf_temp - 1);
+    calculate_result = '$ ' + Math.round(money * buf_rate);
+    $("#cal_result").html("每月須還本息 "+calculate_result+" 元");
+
+    $("html, body").delay(500).animate({ scrollTop: $(".JQ_cal_submit").offset().top - 200 });
+}
+
+function loan_2(money, yRate, year, bufYear) {
+    money = money * 10000;
+    var rate, buf_temp, buf_time,
+        rate = (yRate / 12),
+        calculate_result_1 = '$' + Math.round(money * rate / 100),
+        buf_time = year * 12 - bufYear * 12,
+        rate_100 = rate / 100,
+        buf_temp = 1;
+
+    for (i = 0; i <= buf_time - 1; i++) {
+        buf_temp = buf_temp * (1 + rate_100)
+    }
+
+    buf_rate = (rate_100 * buf_temp) / (buf_temp - 1)
+    calculate_result_2 = '$' + Math.round(money * buf_rate);
+    $("#cal_result_1").html("寬限內每月利息 " + calculate_result_1 + " 元");
+    $("#cal_result_2").html("寬限後月繳本息 " + calculate_result_2 + " 元");
 }

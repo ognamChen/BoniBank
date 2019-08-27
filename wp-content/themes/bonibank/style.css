@@ -233,7 +233,7 @@ header.fixed .screen-mode .logo img {
 }
 
 .overlay .dropbtn {
-  font-size:24px;
+  font-size: 24px;
 }
 
 .overlay .tabExtend {
@@ -342,7 +342,6 @@ header.fixed .screen-mode .logo img {
   border-bottom-right-radius: 50px;
 }
 
-
 .nav-cal.nav-tabs .nav-link.active {
   background: #fff;
   border: 1px solid;
@@ -350,7 +349,6 @@ header.fixed .screen-mode .logo img {
 }
 
 /* nav-cal e */
-
 /* dai_form start */
 .dai_form {
   overflow: auto;
@@ -561,6 +559,72 @@ div.wpcf7-mail-sent-ok {
   word-break: keep-all;
 }
 /* wpcf7 end */
+/* calculate s */
+.tab-cal {
+  padding: 30px;
+}
+
+.tab-cal input,
+.tab-cal input:focus {
+  width: 100%;
+  padding: 0px;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 25px !important;
+  border-radius: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: transparent;
+  padding: 0 20px;
+  transition: all 0.1s ease-in;
+  margin-bottom: 0px;
+  font-size: 18px;
+  outline: none;
+}
+
+.tab-cal input:hover {
+  outline: none;
+  border: 1px solid #00b9eb;
+}
+
+.tab-cal .col-form-label {
+  font-size: 18px;
+  line-height: initial;
+  color: gray;
+}
+
+.cal-btn {
+  width: 160px;
+  background: #fb9000;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.cal-result,
+.cal-result:focus {
+  /* background: #00b9eb; */
+  /* border: #00b9eb; */
+  color: #00b9eb;
+  text-align: right;
+  border-radius: 50px;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 575px) {
+  .tab-cal .col-form-label {
+    font-size: 16px;
+  }
+  .nav-cal.nav-tabs .nav-link {
+    font-size: 16px;
+  }
+}
+/* calculate e */
 
 /* footer start */
 footer {
