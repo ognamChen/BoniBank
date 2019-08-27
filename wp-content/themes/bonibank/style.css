@@ -46,7 +46,7 @@ body {
 }
 
 header {
-  line-height: 80px;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 p {
@@ -72,6 +72,7 @@ video {
 
 section {
   margin: 20px 0;
+  padding: 30px 0;
 }
 /* basic e */
 /* bootstrap s */
@@ -84,15 +85,41 @@ section {
 }
 
 /* bootstrap e */
+
+/* fixed s */
+header.fixed {
+  position: fixed;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 1);
+  width: 100vw;
+  transition: 0.5s;
+  box-shadow: 0px 0px 10px -2px #ccc;
+}
+
+header.fixed .screen-mode .logo img {
+  transition: 0.5s;
+  max-height: 40px;
+}
+
+.header_padding {
+  padding-top: 50px;
+}
+/* fixed e */
 /* logo s */
 .screen-mode .logo img {
+  transition: 0.5s;
   max-height: 80px;
 }
 /* logo e */
 /* nav start */
+.menu.nav-tabs {
+  bottom: 0px;
+  position: absolute;
+}
+
 .nav-tabs {
   border-bottom: 0px;
-  line-height: 80px;
+  /* line-height: 80px; */
 }
 
 .nav-link {
@@ -114,7 +141,7 @@ section {
   border: 1px solid transparent;
   border-top-left-radius: 0rem;
   border-top-right-radius: 0rem;
-  padding: 5px 10px;
+  padding: 0px 10px;
   font-weight: bold;
 }
 
@@ -134,12 +161,23 @@ section {
 /* nav e */
 /* icon-box s */
 .icon-box {
-  padding: 5px 15px;
+  padding: 7px 15px;
   text-align: right;
+  position: absolute;
+  right: 20px;
+  bottom: 0;
 }
 
 .icon-box img {
   border-radius: 50%;
+}
+
+.JQ_menu i {
+  font-size: 30px;
+  color: #00b9eb;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
 }
 /* icon-box e */
 /* tab-content s */
@@ -147,6 +185,107 @@ section {
   width: 100vw;
 }
 /* tab-content e */
+/* overlay s */
+.overlay {
+  height: 30%;
+  width: 50%;
+  position: fixed;
+  z-index: 15;
+  right: -100%;
+  top: 10%;
+  background-color: transparent;
+  overflow-x: hidden;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.overlay-content {
+  position: relative;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  font-size: 40px;
+}
+
+.overlay-search {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.overlay .dropbtn {
+  font-size:24px;
+}
+
+.overlay .tabExtend {
+  display: block !important;
+  background: #fff;
+  border-bottom: 1px solid #ca1a24;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+/* overlay e */
+/* dropdown s */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 1px 5px 0px #d6d6d6;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #fff;
+  border-bottom: 3px solid #fb9000;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown.active .dropdown-content {
+  display: block;
+}
+/* dropdown e */
 /* product s */
 .product-img img {
   border-radius: 50%;
@@ -195,10 +334,12 @@ section {
 }
 
 .nav-cal.nav-tabs .nav-link:first-child {
-  border-top-left-radius: 15px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
 .nav-cal.nav-tabs .nav-link:last-child {
-  border-top-right-radius: 15px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 
@@ -518,39 +659,6 @@ footer {
   color: #ca0002;
 }
 
-/* dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  width: 100%;
-  right: 0;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 1px 5px 0px #d6d6d6;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #fff;
-  border-bottom: 3px solid #ff0000;
-}
-
-.dropdown:hover .dropdown-content,
-.dropdown.active .dropdown-content {
-  display: block;
-}
-
 /* posts */
 
 .posts_description {
@@ -679,82 +787,6 @@ footer {
     margin-top: 0;
   }
 }
-
-/* overlay start */
-.overlay {
-  height: 80%;
-  /* min-height: 30%; */
-  width: 50%;
-  position: fixed; /* Stay in place */
-  z-index: 15; /* Sit on top */
-  right: -100%;
-  top: 20%;
-  /* opacity: 0; */
-  /* box-shadow: 0px 1px 3px 0px #d6d6d6; */
-  background-color: transparent;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-}
-
-/* Position the content inside the overlay */
-.overlay-content {
-  position: relative;
-  top: 0; /* 25% from the top */
-  width: 100%; /* 100% width */
-  text-align: center; /* Centered text/links */
-  /* margin-top: 30px; */
-}
-
-/* The navigation links inside the overlay */
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 400;
-  /* color: #fff; */
-  display: block; /* Display block instead of inline */
-  transition: 0.3s; /* Transition effects on hover (color) */
-}
-
-/* When you mouse over the navigation links, change their color */
-.overlay a:hover,
-.overlay a:focus {
-  /* color: rgba(205, 205, 70, 1); */
-  /* color: transparent; */
-}
-
-/* Position the close button (top right corner) */
-.overlay .closebtn {
-  position: absolute;
-  top: 2%;
-  left: 2%;
-  font-size: 40px;
-}
-
-.overlay-search {
-  width: 90%;
-  margin: 0 auto;
-  padding-bottom: 20px;
-}
-
-.overlay .tabExtend {
-  display: block !important;
-  background: #fff;
-  border-bottom: 1px solid #ca1a24;
-}
-
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
-  .overlay a {
-    font-size: 20px;
-  }
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
-/* overlay end */
 
 /* QA collapse start */
 .qa_contain {
@@ -889,6 +921,7 @@ footer {
 }
 
 .myaccordion.credit .btn span {
+  max-width: 80%;
   color: #fb9000;
 }
 

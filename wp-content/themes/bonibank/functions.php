@@ -36,17 +36,17 @@ function add_styles()
 add_action('wp_enqueue_scripts', 'update_jquery_version');
 function update_jquery_version()
 {
-    wp_enqueue_script('jquery3', get_template_directory_uri() . "/assets/jquery/jquery-3.3.0.min.js", array(), '', true);
-    wp_enqueue_script('jquery_ui_js', get_template_directory_uri() . "/assets/jquery/jquery-ui.min.js", array(), '', true);
-    wp_enqueue_script('popper_min', get_template_directory_uri() . "/assets/popper/popper-1.12.9.min.js", array(), '', true);
-    wp_enqueue_script('bootstrap_min', get_template_directory_uri() . "/assets/bootstrap/js/bootstrap.min.js", array(), '', true);
-    wp_enqueue_script('matchHeight', get_template_directory_uri() . "/assets/jquery.matchHeight.js", array(), '', true);
-    wp_enqueue_script('owlCarousel2_js', get_template_directory_uri() . "/assets/owlCarousel2/js/owl.carousel.min.js", array(), '', true);
+    wp_enqueue_script('jquery3', get_template_directory_uri() . "/assets/jquery/jquery-3.3.0.min.js", array(), '', false);
+    wp_enqueue_script('jquery_ui_js', get_template_directory_uri() . "/assets/jquery/jquery-ui.min.js", array(), '', false);
+    wp_enqueue_script('popper_min', get_template_directory_uri() . "/assets/popper/popper-1.12.9.min.js", array(), '', false);
+    wp_enqueue_script('bootstrap_min', get_template_directory_uri() . "/assets/bootstrap/js/bootstrap.min.js", array(), '', false);
+    wp_enqueue_script('matchHeight', get_template_directory_uri() . "/assets/jquery.matchHeight.js", array(), '', false);
+    wp_enqueue_script('owlCarousel2_js', get_template_directory_uri() . "/assets/owlCarousel2/js/owl.carousel.min.js", array(), '', false);
     wp_enqueue_script('fancybox', get_template_directory_uri() . "/assets/fancybox/jquery.fancybox.min.js");
-    wp_enqueue_script('tweenMax', get_template_directory_uri() . "/assets/TweenMax.min.js", array(), '', true);
-    wp_enqueue_script('ScrollMagic', get_template_directory_uri() . "/assets/ScrollMagic/ScrollMagic.js", array(), '', true);
-    wp_enqueue_script('ScrollMagicAnimate', get_template_directory_uri() . "/assets/ScrollMagic/plugins/animation.gsap.js", array(), '', true);
-    wp_enqueue_script('ognam_js', get_template_directory_uri() . "/assets/js/ognam.js", array(), '', true);
+    wp_enqueue_script('tweenMax', get_template_directory_uri() . "/assets/TweenMax.min.js", array(), '', false);
+    wp_enqueue_script('ScrollMagic', get_template_directory_uri() . "/assets/ScrollMagic/ScrollMagic.js", array(), '', false);
+    wp_enqueue_script('ScrollMagicAnimate', get_template_directory_uri() . "/assets/ScrollMagic/plugins/animation.gsap.js", array(), '', false);
+    wp_enqueue_script('ognam_js', get_template_directory_uri() . "/assets/js/ognam.js", array(), '', false);
 }
 
 /*

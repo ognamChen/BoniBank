@@ -18,13 +18,13 @@
                 ?>
                 <!-- PHP repeat start  -->  
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="product-img text-center">
                             <img class="img-fluid" src="<?php echo $image ?>" alt="" srcset="">
                         </div>
                     </div>
-                    <div class="col-md-8">
-                        <div class="content-header text-center">
+                    <div class="col-lg-8">
+                        <div class="content-header text-center" style="margin-top:30px;">
                             <p>
                                 <?php echo $post->post_title ?>
                             </p>

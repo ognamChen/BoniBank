@@ -5,7 +5,6 @@ Template Name: 房屋貸款
 ?>
 <?php get_header();?>
 <?php get_template_part('nav');?>
-<div class="header_padding" style="display:none;"></div>
 <script>
 fbq('track', '頁面瀏覽-首頁(信用貸款)');
 </script>
@@ -22,6 +21,12 @@ fbq('track', '頁面瀏覽-首頁(信用貸款)');
 		</div>
 	</div>
 </div>
+<script>
+    $(function() {
+        $(".menu .nav-item").find("a").removeClass("active");
+        $(".menu .house.nav-item").find("a").addClass("active");
+    });
+</script>
 <?php get_template_part('page-content/product');?>
 <!-- <?php get_template_part('page-content/QA_credit');?> -->
 <!-- <?php get_template_part('page-content/flow');?> -->

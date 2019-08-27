@@ -1,3 +1,4 @@
+// 導覽條
 var length;
 $(window).on("load resize", function () {
     var width = $(window).width();
@@ -9,13 +10,35 @@ $(window).on("load resize", function () {
     $(".mobile .dropdown").addClass("active");
     $(".mobile .dropdown .dropbtn").addClass("active");
 })
+// 導覽條 漢堡開關
+var isOpen = false;
+function openNav() {
+    if (isOpen) {
+        $("#myNav").css("right", "-100%");
+        $(".JQ_menu").find("i").removeClass("fa-times").addClass("fa-bars");
+        isOpen = false;
+    } else {
+        $("#myNav").css("right", "0");
+        $(".JQ_menu").find("i").removeClass("fa-bars").addClass("fa-times");
+        isOpen = true;
+    }
+}
+
+// 滾動時觸發固定導覽條
+$(window).bind("scroll", function () {
+    if ($(window).scrollTop() > 0) {
+        $("header").addClass("fixed");
+        $(".nav-tabs").not(".mobile").addClass("fixed");
+        $(".header_padding").show();
+    } else {
+        $("header").removeClass("fixed");
+        $(".nav-tabs").removeClass("fixed");
+        $(".header_padding").hide();
+    }
+});
 
 $(document).ready(function () {
-    // img fluid start
     $("img").addClass("img-fluid");
-    // img fluid end
-
-    // match Height start
     var matchHeightOption = {
         byRow: true,
         property: "height",
@@ -30,9 +53,6 @@ $(document).ready(function () {
         if ($(this).val() == "其他") {
             var _ischecked = $(this).prop("checked");
             if (_ischecked) {
-                //   console.log($(this)
-                //   .parents(".has-free-text")
-                //   .find(".wpcf7-free-text"));
                 $(this)
                     .parents(".has-free-text")
                     .find("input.wpcf7-free-text")
@@ -44,18 +64,6 @@ $(document).ready(function () {
                     .hide();
             }
         }
-    });
-
-    $(window).bind("scroll", function () {
-        // if ($(window).scrollTop() > 0) {
-        //     $("header").addClass("fixed");
-        //     $(".nav-tabs").not(".mobile").addClass("fixed");
-        //     $(".header_padding").show();
-        // } else {
-        //     $("header").removeClass("fixed");
-        //     $(".nav-tabs").removeClass("fixed");
-        //     $(".header_padding").hide();
-        // }
     });
 
     var controller = new ScrollMagic.Controller();
@@ -167,23 +175,6 @@ $(function () {
 
 
 });
-
-/* Open when someone clicks on the span element */
-var isOpen = false;
-function openNav() {
-    if (isOpen) {
-        $("#myNav").css("right", "-100%");
-        $(".JQ_menu").find("i").removeClass("fa-times").addClass("fa-bars");
-        isOpen = false;
-    } else {
-        $("#myNav").css("right", "0");
-        $(".JQ_menu").find("i").removeClass("fa-bars").addClass("fa-times");
-        isOpen = true;
-    }
-    // var width = $(window).width();
-
-    // document.getElementById("myNav").style.width = "100%";
-}
 
 $(document).ready(function () {
     $("body").on("click", function () {

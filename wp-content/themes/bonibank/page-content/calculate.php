@@ -1,7 +1,3 @@
-<style>
-
-
-</style>
 <section class="calculate-section">
     <div class="container">
         <div class="content-header text-center">
@@ -85,23 +81,23 @@
                 <div class="tab-content tab-cal" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <div class="form-group row">
-                            <label for="cal_0" class="col-4 text-right col-form-label">貸款金額</label>
+                            <label for="cal_10" class="col-4 text-right col-form-label">貸款金額</label>
                             <div class="col-5">
-                                <input type="number" class="" id="cal_0">
+                                <input type="number" class="" id="cal_10">
                             </div>
                             <label for="" class="col-3 col-form-label">萬元</label>
                         </div>
                         <div class="form-group row">
-                            <label for="cal_1" class="col-4 text-right col-form-label">貸款利率</label>
+                            <label for="cal_11" class="col-4 text-right col-form-label">貸款利率</label>
                             <div class="col-5">
-                                <input type="number" class="" id="cal_1">
+                                <input type="number" class="" id="cal_11">
                             </div>
                             <label for="" class="col-3 col-form-label">％</label>
                         </div>
                         <div class="form-group row">
-                            <label for="cal_2" class="col-4 text-right col-form-label">貸款年限</label>
+                            <label for="cal_12" class="col-4 text-right col-form-label">貸款年限</label>
                             <div class="col-5">
-                                <input type="number" class="" id="cal_2">
+                                <input type="number" class="" id="cal_12">
                             </div>
                             <label for="" class="col-3 col-form-label">年</label>
                         </div>
@@ -111,7 +107,7 @@
                                 <hr style="border-color:#29b9eb;">
                                 <div class="form-group row">
                                     <label for="cal_result" class="col-6 text-right col-form-label">每月須還本息</label>
-                                    <div class="col-5">
+                                    <div class="col-4">
                                         <input type="text" class="cal-result" id="cal_result">
                                     </div>
                                     <label for="" class="col-1 col-form-label text-left">元</label>
@@ -119,7 +115,56 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="form-group row">
+                            <label for="cal_20" class="col-4 text-right col-form-label">貸款金額</label>
+                            <div class="col-5">
+                                <input type="number" class="" id="cal_20">
+                            </div>
+                            <label for="" class="col-3 col-form-label">萬元</label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="cal_21" class="col-4 text-right col-form-label">貸款利率</label>
+                            <div class="col-5">
+                                <input type="number" class="" id="cal_21">
+                            </div>
+                            <label for="" class="col-3 col-form-label">％</label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="cal_22" class="col-4 text-right col-form-label">貸款年限</label>
+                            <div class="col-5">
+                                <input type="number" class="" id="cal_22">
+                            </div>
+                            <label for="" class="col-3 col-form-label">年</label>
+                        </div>
+                        <div class="form-group row">
+                            <label for="cal_23" class="col-4 text-right col-form-label">寬限期限</label>
+                            <div class="col-5">
+                                <input type="number" class="" id="cal_23">
+                            </div>
+                            <label for="" class="col-3 col-form-label">年</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-right mt-2">
+                                <button class="cal-btn JQ_cal_submit">立即試算</button>
+                                <hr style="border-color:#29b9eb;">
+                                <div class="form-group row">
+                                    <label for="cal_result_1" class="col-6 text-right col-form-label">寬限內每月利息</label>
+                                    <div class="col-5">
+                                        <input type="text" class="cal-result" id="cal_result_1">
+                                    </div>
+                                    <!-- <label for="" class="col-1 col-form-label text-left">元</label> -->
+                                </div>
+                                <div class="form-group row">
+                                    <label for="cal_result_2" class="col-6 text-right col-form-label">寬限後月繳本息</label>
+                                    <div class="col-5">
+                                        <input type="text" class="cal-result" id="cal_result_2">
+                                    </div>
+                                    <!-- <label for="" class="col-1 col-form-label text-left">元</label> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

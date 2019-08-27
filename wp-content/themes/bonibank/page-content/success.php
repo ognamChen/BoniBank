@@ -1,5 +1,6 @@
 <?php $content_type = "success"?>
-<section class="success-section">
+<section class="success-section" style="    background-image: linear-gradient(180deg, #ffc1074a, rgba(0, 0, 0, 0));">
+<!-- background:#555d664a; -->
     <div class="container">
         <div class="content-header text-center">
             <p>成功案例</p>
@@ -22,12 +23,12 @@
                 <!-- PHP repeat start  -->
                
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <div class="product-img text-center">
                             <img class="img-fluid" src="<?php echo $image ?>" alt="" srcset="">
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-lg-8">
                         <div class="product-content">
                             <p>
                                 <?php echo $post->post_title ?>
