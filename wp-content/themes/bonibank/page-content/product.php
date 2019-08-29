@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="col-lg-8">
-                        <div class="content-header text-center" style="margin-top:30px;">
+                        <div class="content-header text-center" style="margin-top:30px; margin-bottom:0px;">
                             <p>
                                 <?php echo $post->post_title ?>
                             </p>
