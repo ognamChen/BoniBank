@@ -632,8 +632,8 @@ footer {
 }
 
 .footer_note {
-  background: rgba(250, 250, 250, 1);
-  color: #666;
+  background: rgb(64, 146, 216);
+  color: #fff;
   padding: 10px 20px;
   font-size: 12px;
   /* letter-spacing: 2px; */
@@ -691,7 +691,7 @@ footer {
 }
 
 .bgr {
-  background: #e11d00;
+  background: rgb(64, 146, 216);
   color: #fff;
 }
 /* footer end */
