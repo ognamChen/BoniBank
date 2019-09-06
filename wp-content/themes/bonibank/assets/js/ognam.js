@@ -24,6 +24,10 @@ function openNav() {
     }
 }
 
+function closeNav() {
+    $("#myNav").css("right", "-100%");
+}
+
 // 滾動時觸發固定導覽條
 $(window).bind("scroll", function () {
     if ($(window).scrollTop() > 0) {
@@ -37,6 +41,7 @@ $(window).bind("scroll", function () {
     }
 });
 
+// 動畫
 $(document).ready(function () {
     $("img").addClass("img-fluid");
     var matchHeightOption = {
@@ -48,23 +53,6 @@ $(document).ready(function () {
     $(".posts_mh").matchHeight(matchHeightOption);
     $(".post_mh").matchHeight(matchHeightOption);
     // match Height end
-
-    $("input").change(function () {
-        if ($(this).val() == "其他") {
-            var _ischecked = $(this).prop("checked");
-            if (_ischecked) {
-                $(this)
-                    .parents(".has-free-text")
-                    .find("input.wpcf7-free-text")
-                    .show();
-            } else {
-                $(this)
-                    .parents(".has-free-text")
-                    .find("input.wpcf7-free-text")
-                    .hide();
-            }
-        }
-    });
 
     var controller = new ScrollMagic.Controller();
     var scene;
@@ -143,34 +131,11 @@ $(document).ready(function () {
 
 
 });
-
-// tab auto run
-// Tab-Pane change function
-var tabChange = function () {
-    if ($(window).width() > 991) {
-        return false;
-    }
-    var tabs = $(".nav-tabs > li.autoRun > a");
-    var active = tabs.filter(".active");
-    var next = active.parent("li.autoRun").next("li.autoRun").length ? active.parent("li").next("li").find("a") : tabs.parent("li").filter(":first-child").find("a");
-    // Bootsrap tab show, para ativar a tab
-    next.tab("show");
-};
-// Tab Cycle function
-var tabCycle = setInterval(tabChange, 5000);
-// Tab click event handler
+// FB像素區
 $(function () {
     $(".nav-tabs > li > a").click(function (e) {
         e.preventDefault();
         fbq('track', "點擊-" + $(this).html());
-        // Parar o loop
-        clearInterval(tabCycle);
-        // mosta o tab clicado, default bootstrap
-        $(this).tab("show");
-        // Inicia o ciclo outra vez
-        setTimeout(function () {
-            tabCycle = setInterval(tabChange, 5000); //quando recomeça assume este timing
-        }, 0);
     });
 
 
@@ -184,66 +149,59 @@ $(document).ready(function () {
     })
 });
 
-/* Close when someone clicks on the "x" symbol inside the overlay */
-function closeNav() {
-    $("#myNav").css("right", "-100%");
-    // $("#myNav").style.width = "0%";
-    // document.getElementById("myNav").style.width = "0%";
-}
-
 // fb pixel add depth test
-function getCurrentPosition() {
-    return window.pageYOffset ||
-        (document.documentElement || document.body.parentNode || document.body).scrollTop;
-}
+// function getCurrentPosition() {
+//     return window.pageYOffset ||
+//         (document.documentElement || document.body.parentNode || document.body).scrollTop;
+// }
 
-function getScrollableHeight() {
-    var d = Math.max(
-        document.body.scrollHeight, document.documentElement.scrollHeight,
-        document.body.offsetHeight, document.documentElement.offsetHeight,
-        document.body.clientHeight, document.documentElement.clientHeight
-    )
-    var w = window.innerHeight ||
-        (document.documentElement || document.body).clientHeight;
-    if (d > w) {
-        return d - w;
-    }
-    return 0; // not scrollable
-}
+// function getScrollableHeight() {
+//     var d = Math.max(
+//         document.body.scrollHeight, document.documentElement.scrollHeight,
+//         document.body.offsetHeight, document.documentElement.offsetHeight,
+//         document.body.clientHeight, document.documentElement.clientHeight
+//     )
+//     var w = window.innerHeight ||
+//         (document.documentElement || document.body).clientHeight;
+//     if (d > w) {
+//         return d - w;
+//     }
+//     return 0; // not scrollable
+// }
 
-// var checkPoints = [10, 30, 50, 70, 90];
-var checkPoints = [70];
-var reached = 0;
-var scrollableHeight = getScrollableHeight();
+// // var checkPoints = [10, 30, 50, 70, 90];
+// var checkPoints = [70];
+// var reached = 0;
+// var scrollableHeight = getScrollableHeight();
 
-window.addEventListener('resize', function () {
-    scrollableHeight = getScrollableHeight();
-});
-window.addEventListener('scroll', function () {
-    var current;
-    if (scrollableHeight == 0) {
-        current = 100;
-    } else {
-        var current = getCurrentPosition() / scrollableHeight * 100;
-    }
-    if (current > reached) {
-        reached = current;
-        // checkpoint and send events
-        while (checkPoints.length > 0) {
-            var c = checkPoints[0];
-            if (c <= reached) {
-                checkPoints.shift();
-                fbq('trackCustom', '瀏覽頁面70%', {
-                    depth: c,
-                });
-            } else {
-                break;
-            }
-        }
-    }
-}, false);
+// window.addEventListener('resize', function () {
+//     scrollableHeight = getScrollableHeight();
+// });
+// window.addEventListener('scroll', function () {
+//     var current;
+//     if (scrollableHeight == 0) {
+//         current = 100;
+//     } else {
+//         var current = getCurrentPosition() / scrollableHeight * 100;
+//     }
+//     if (current > reached) {
+//         reached = current;
+//         // checkpoint and send events
+//         while (checkPoints.length > 0) {
+//             var c = checkPoints[0];
+//             if (c <= reached) {
+//                 checkPoints.shift();
+//                 fbq('trackCustom', '瀏覽頁面70%', {
+//                     depth: c,
+//                 });
+//             } else {
+//                 break;
+//             }
+//         }
+//     }
+// }, false);
 
-// Delay pixel fire by 5 seconds
+//FB像素-停留網站時間
 var seconds = 5;
 setTimeout(function () {
     fbq('track', '停留超過5秒');
@@ -254,8 +212,7 @@ setTimeout(function () {
     fbq('track', '停留超過30秒');
 }, seconds2 * 1000);
 
-// QA
-
+//QA箭頭
 $("[id*='accordion']").on("hide.bs.collapse show.bs.collapse", e => {
     $(e.target)
         .prev()
@@ -263,29 +220,7 @@ $("[id*='accordion']").on("hide.bs.collapse show.bs.collapse", e => {
         .toggleClass("fa-chevron-down fa-chevron-up");
 });
 
-// QA page
-$(".JQ_QA_btn").on("click", function () {
-    var _credit = $(this).hasClass("credit"),
-        _car = $(this).hasClass("car"),
-        _house = $(this).hasClass("house"),
-        _loan = $(this).hasClass("loan");
-
-    if (_credit) {
-        $(".JQ_QA").hide();
-        $(".credit.JQ_QA").show();
-    } else if (_car) {
-        $(".JQ_QA").hide();
-        $(".car.JQ_QA").show();
-    } else if (_house) {
-        $(".JQ_QA").hide();
-        $(".house.JQ_QA").show();
-    } else if (_loan) {
-        $(".JQ_QA").hide();
-        $(".loan.JQ_QA").show();
-    }
-});
-
-// calculation 
+//計算機
 function calculate_1() {
     var money = $("#cal_10").val(),
         yRate = $("#cal_11").val(),

@@ -10,7 +10,7 @@
                         <img class="img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/logo.png"; ?>" alt="">
                     </a>
                 </div>
-                <div class="col-lg-5 col-1">
+                <div class="col-lg-4 col-1">
                     <div class="d-none d-lg-block">
                         <ul class="menu nav nav-tabs justify-content-center">
                             <li class="nav-item credit">
@@ -25,7 +25,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-5">
+                <div class="col-lg-4 col-5">
                    
                     <div class="icon-box">
                         <a class="d-none d-lg-inline">
