@@ -1,5 +1,20 @@
 <style>
 
+    @media screen and (max-width:991px) {
+        .mobile-fixed {
+        position: fixed;
+        bottom: 10px;
+        width: 120px;
+        /* size: 80px; */
+        right: 10px;
+        z-index: 99;
+        }
+
+        .mobile-fixed a img {
+            width: 45px !important;
+        }
+    }
+    
 </style>
 <header>
     <div class="container-fluid">
@@ -26,14 +41,15 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-5">
-                   
                     <div class="icon-box">
-                        <a class="d-none d-lg-inline">
-                            <img style="width:30px;" class="img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/sample-icon-line.png"; ?>" alt="">
-                        </a>
-                        <a class="d-none d-lg-inline">
-                            <img style="width:30px;" class="img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/sample-icon-line.png"; ?>" alt="">
-                        </a>
+                        <div class="mobile-fixed">
+                            <a class="" href="https://lihi1.cc/15MTk">
+                                <img style="width:30px;filter: hue-rotate(70deg);" class="img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/icon-line.png"; ?>" alt="">
+                            </a>
+                            <a class="" href="tel:0903168987">
+                                <img style="width:30px;filter: hue-rotate(45deg);" class="img-fluid" src="<?php echo get_template_directory_uri() . "/assets/img/icon-phone.png"; ?>" alt="">
+                            </a>
+                        </div>
                         <a class="d-inline d-lg-none JQ_menu" href="javascript:openNav();">
                             <i class="fas fa-bars"></i>
                         </a>

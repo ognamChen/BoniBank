@@ -114,7 +114,14 @@ header.fixed .screen-mode .logo img {
 /* nav start */
 .menu.nav-tabs {
   bottom: 0px;
-  position: absolute;
+  /* position: absolute; */
+  margin-top: 42px;
+  transition: 0.5s;
+}
+
+.fixed.menu.nav-tabs {
+  margin-top: 5px;
+  transition: 0.5s;
 }
 
 .nav-tabs {
@@ -142,7 +149,7 @@ header.fixed .screen-mode .logo img {
   border-top-left-radius: 0rem;
   border-top-right-radius: 0rem;
   padding: 0px 10px;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .nav-tabs .nav-link a:hover,
