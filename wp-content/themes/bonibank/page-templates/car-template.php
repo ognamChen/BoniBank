@@ -16,7 +16,7 @@ fbq('track', '頁面瀏覽-汽車貸款');
 	<div class="tab-content">
         <div class="tab-pane active" id="credit">
             <img class="img-fluid d-none d-lg-block" src="<?php echo get_template_directory_uri() . "/assets/img/banner-car_h.jpg"; ?>" alt="">
-            <img class="img-fluid d-lg-none" src="<?php echo get_template_directory_uri() . "/assets/img/banner-car_h.jpg"; ?>" alt="">
+            <img class="img-fluid d-lg-none" src="<?php echo get_template_directory_uri() . "/assets/img/banner-car_v.jpg"; ?>" alt="">
 		</div>
 	</div>
 </div>

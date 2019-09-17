@@ -72,7 +72,7 @@ video {
 
 section {
   /* margin: 20px 0; */
-  padding: 30px 0;
+  padding: 20px 0;
 }
 /* basic e */
 /* bootstrap s */
@@ -309,7 +309,7 @@ header.fixed .screen-mode .logo img {
 /* product e */
 /* content- s */
 .content-header {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .content-header p {
@@ -327,6 +327,7 @@ header.fixed .screen-mode .logo img {
 }
 .contact-text {
   padding: 10px;
+  /* line-height: 24px; */
 }
 /* content- e */
 /* nav-cal s */
