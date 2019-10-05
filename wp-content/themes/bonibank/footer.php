@@ -14,7 +14,7 @@
                     &copy; <?php echo "2012-";
                     echo date("Y");
                     echo " ";
-                    echo "邦尼股份有限公司. All Rights Reserved."; ?>
+                    echo "冠瑜股份有限公司. All Rights Reserved."; ?>
                 </div>
                 <div class="clearfix"></div>
             </div>

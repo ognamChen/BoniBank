@@ -299,12 +299,14 @@ function mycustom_wp_footer() {
 ?>
 <script type="text/javascript">
 document.addEventListener( 'wpcf7mailsent', function( event ) {
-    ga( 'send', 'event', 'Contact Form', 'submit' );
-    if (event.detail.contactFormId == "15") {
-        fbq('track', '需求表單提交');
-    } else if (event.detail.contactFormId == "109") {
-        fbq('track', '合作表單提交');
-    }
+    // ga( 'send', 'event', 'Contact Form', 'submit' );
+    // console.log(event.detail.contactFormId)
+    fbq('track', '需求表單提交');
+    // if (event.detail.contactFormId == "15") {
+        
+    // } else if (event.detail.contactFormId == "109") {
+    //     fbq('track', '合作表單提交');
+    // }
 }, false );
 </script>
 <?php

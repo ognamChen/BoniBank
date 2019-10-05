@@ -6,7 +6,7 @@ Template Name: 汽車貸款
 <?php get_header();?>
 <?php get_template_part('nav');?>
 <script>
-fbq('track', '頁面瀏覽-汽車貸款');
+fbq('track', '頁面瀏覽-汽車貸款(首頁)');
 </script>
 <?php 
     global $page_type;
